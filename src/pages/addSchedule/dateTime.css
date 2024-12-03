@@ -1,0 +1,16 @@
+
+.react-datetime-picker {
+    border: none;
+  }
+  
+  .react-datetime-picker__wrapper {
+    border: none;
+    box-shadow: none;
+  }
+  
+
+  .react-datetime-picker__inputGroup input {
+    border: none;
+    outline: none;
+  }
+  

@@ -1,16 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 import { createBrowserRouter } from "react-router";
-import MainLayOut from "./mainLayOut/MainLayOut";
-import ErrorPage from "./pages/Error/ErrorPage";
-import AuthProvider from "./Providers/AuthProvider";
 import { RouterProvider } from "react-router-dom";
-import Home from './pages/Home/Home';
-import LogIn from './pages/logIn/LogIn';
-import SignUp from './pages/SignUp/SignUp';
-import AllSchedule from './pages/allSchedule/AllSchedule';
-import AddSchedule from './pages/addSchedule/AddSchedule';
+import "./index.css";
+import MainLayOut from "./mainLayOut/MainLayOut";
+import AddSchedule from "./pages/addSchedule/AddSchedule";
+import AllSchedule from "./pages/allSchedule/AllSchedule";
+import ErrorPage from "./pages/Error/ErrorPage";
+import Home from "./pages/Home/Home";
+import LogIn from "./pages/logIn/LogIn";
+import SignUp from "./pages/SignUp/SignUp";
+import AuthProvider from "./Providers/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -20,25 +20,26 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/login",
-        element: < LogIn />
+        element: <LogIn />,
       },
       {
         path: "/signUp",
-        element: < SignUp />
+        element: <SignUp />,
       },
       {
         path: "/allSchedule",
-        element: < AllSchedule />
+        element: <AllSchedule />,
+        loader: () => fetch("http://localhost:5000/schedule"),
       },
       {
         path: "/addSchedule",
-        element: < AddSchedule />
+        element: <AddSchedule />,
       },
-    ]
+    ],
   },
 ]);
 
